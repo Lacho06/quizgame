@@ -1,0 +1,97 @@
+.container-app{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 5rem 0;
+}
+
+.container-app div{
+    margin: 2rem;
+}
+
+@keyframes parpadear-slow {
+    from{
+        text-shadow: 0 0 2rem yellow;
+        color: white;
+    }
+    0%{
+        color: transparent;
+        text-shadow: 0 0 2rem transparent;
+    }
+    to{
+        text-shadow: 0 0 2rem blue;
+        color: white;
+    }
+}
+
+@keyframes parpadear-fast {
+    from{
+        text-shadow: 0 0 2rem blue;
+        color: white;
+    }
+    0%{
+        color: transparent;
+        text-shadow: 0 0 2rem transparent;
+    }
+    40%{
+        text-shadow: 0 0 2rem yellow;
+        color: white;
+    }
+    41%{
+        color: transparent;
+        text-shadow: 0 0 2rem transparent;
+    }
+    42%{
+        text-shadow: 0 0 2rem yellow;
+        color: white;
+    }
+    43%{
+        color: transparent;
+        text-shadow: 0 0 2rem transparent;
+    }
+    44%{
+        text-shadow: 0 0 2rem yellow;
+        color: white;
+    }
+    45%{
+        color: transparent;
+        text-shadow: 0 0 2rem transparent;
+    }
+    80%{
+        text-shadow: 0 0 2rem blue;
+        color: white;
+    }
+    90%{
+        color: transparent;
+        text-shadow: 0 0 2rem transparent;
+    }
+    to{
+        text-shadow: 0 0 2rem yellow;
+        color: white;
+    }
+}
+
+
+h1{
+    font-family: 'Barriecito', system-ui;
+    text-shadow: 0 0 2rem yellow;
+    animation-name: parpadear-slow;
+    animation-duration: 6s;
+    animation-iteration-count: infinite;
+    color: black;
+}
+
+h1 span{
+    font-family: 'Barriecito', system-ui;
+    text-shadow: 0 0 2rem blue;
+    animation-name: parpadear-fast;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
+    color: black;
+}
+
+.btn-play{
+    text-decoration: none;
+}

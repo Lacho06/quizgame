@@ -1,0 +1,119 @@
+{
+    "response_code": 0,
+    "results": [
+        {
+            "category": "Entertainment: Film",
+            "type": "multiple",
+            "difficulty": "medium",
+            "question": "In the 1984 movie &quot;The Terminator&quot;, what model number is the Terminator portrayed by Arnold Schwarzenegger?",
+            "correct_answer": "T-800",
+            "incorrect_answers": [
+                "I-950",
+                "T-888",
+                "T-1000"
+            ]
+        },
+        {
+            "category": "Entertainment: Music",
+            "type": "boolean",
+            "difficulty": "medium",
+            "question": "The cover of The Beatles album &quot;Abbey Road&quot; featured a Volkswagen Beetle in the background.",
+            "correct_answer": "True",
+            "incorrect_answers": [
+                "False"
+            ]
+        },
+        {
+            "category": "Vehicles",
+            "type": "multiple",
+            "difficulty": "medium",
+            "question": "Which of the following is NOT a Russian car manufacturer?",
+            "correct_answer": "BYD",
+            "incorrect_answers": [
+                "Silant",
+                "Dragon",
+                "GAZ"
+            ]
+        },
+        {
+            "category": "Entertainment: Television",
+            "type": "multiple",
+            "difficulty": "medium",
+            "question": "What is the setting of the show &quot;Parks and Recreation&quot;?",
+            "correct_answer": "Pawnee, Indiana",
+            "incorrect_answers": [
+                "Eagleton, Indiana",
+                "Pasadena, California",
+                "London, England"
+            ]
+        },
+        {
+            "category": "Entertainment: Japanese Anime & Manga",
+            "type": "boolean",
+            "difficulty": "easy",
+            "question": "In Kill La Kill, the weapon of the main protagonist is a katana. ",
+            "correct_answer": "False",
+            "incorrect_answers": [
+                "True"
+            ]
+        },
+        {
+            "category": "Entertainment: Video Games",
+            "type": "boolean",
+            "difficulty": "medium",
+            "question": "TF2: The Heavy&#039;s voice actor, Gary Schwartz, voices the Demoman as well ",
+            "correct_answer": "True",
+            "incorrect_answers": [
+                "False"
+            ]
+        },
+        {
+            "category": "Sports",
+            "type": "multiple",
+            "difficulty": "easy",
+            "question": "How many points did LeBron James score in his first NBA game?",
+            "correct_answer": "25",
+            "incorrect_answers": [
+                "19",
+                "69",
+                "41"
+            ]
+        },
+        {
+            "category": "Entertainment: Japanese Anime & Manga",
+            "type": "multiple",
+            "difficulty": "medium",
+            "question": "Which of the following manga have the most tankouban volumes?",
+            "correct_answer": "Golgo 13",
+            "incorrect_answers": [
+                "JoJo&#039;s Bizarre Adventure",
+                "Detective Conan",
+                "One Piece"
+            ]
+        },
+        {
+            "category": "Entertainment: Film",
+            "type": "multiple",
+            "difficulty": "medium",
+            "question": "Who directed the movie &quot;Alien&quot;?",
+            "correct_answer": "Ridley Scott",
+            "incorrect_answers": [
+                "Christopher Nolan",
+                "Michael Bay",
+                "James Cameron"
+            ]
+        },
+        {
+            "category": "Geography",
+            "type": "multiple",
+            "difficulty": "medium",
+            "question": "What continent is the country Lesotho in?",
+            "correct_answer": "Africa",
+            "incorrect_answers": [
+                "Asia",
+                "South America",
+                "Europe"
+            ]
+        }
+    ]
+}

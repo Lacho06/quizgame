@@ -1,0 +1,36 @@
+.container-game{
+    margin: 0;
+    padding: 0;
+}
+
+.nav-game{
+    padding: .5rem;
+    display: flex;
+    justify-content: space-around;
+}
+
+@media screen and (min-width: 576px){
+    .nav-game{
+        padding: 1rem 2rem;
+    }
+}
+
+.nav-game p{
+    font-size: 1.5rem;
+}
+
+.nav-game span{
+    color: yellow;
+}
+
+.score-bad{
+    color: red;
+}
+
+.score-medium{
+    color: yellow;
+}
+
+.score-good{
+    color: green;
+}

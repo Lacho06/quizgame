@@ -1,0 +1,58 @@
+.option-container{
+    width: 100%;
+    display: flex;
+    place-content: center;
+    padding: 1rem 2rem;
+    border: 1px solid #bbb;
+    cursor: pointer;
+}
+
+.option-container:hover{
+    animation-name: hoverOption;
+    animation-duration: 2s;
+    animation-iteration-count: 1;
+    animation-delay: .2s;
+}
+
+@keyframes hoverOption {
+    from{
+        box-shadow: none;
+    }
+    50%{
+        box-shadow: 0 0 2rem .5rem green;
+    }
+    to{
+        box-shadow: none;
+    }
+}
+
+
+.option-container input{
+    display: none;
+}
+
+.option-container span{
+    color: white;
+    font-family: system-ui;
+    font-size: 1.2rem;
+}
+
+.option-check{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.option-check span{
+    margin: auto;
+}
+
+.option-check svg{
+    display: inline;
+    width: 20px;
+    height: 20px;
+    margin: auto 0;
+}
+
+.option-uncheck svg{
+    display: none;
+}
