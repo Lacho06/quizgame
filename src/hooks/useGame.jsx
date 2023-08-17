@@ -6,13 +6,13 @@ import { useQuestion } from './useQuestion';
 export function useGame(){
     const [questions, setQuestions] = useState([])
     const [order, setOrder] = useState(0)
-    const [length, setLength] = useState()
     const [scorePack, incrementScore, resetScore, setFinish] = useScore()
-    const [question, isCorrectOption, setQuestion, checkOption] = useQuestion(questions[order])
+    const [question, isCorrectOption, isCheckAnyOption, setQuestion, checkOption] = useQuestion(questions[order])
     const { score, finish } = scorePack
 
     const nextQuestion = () => {
-        if(isCorrectOption){
+        if(!isCheckAnyOption()) return
+        if(isCorrectOption()){
             incrementScore()
         }
         if(order === questions.length-1){
@@ -25,16 +25,22 @@ export function useGame(){
 
     const getNewQuestions = () => {
         setQuestions(getQuestions())
+        setQuestion(questions[order])
     }
-
+    
     const resetGame = () => {
         getNewQuestions()
         setOrder(0)
-        setLength(questions.length)
         resetScore()
     }
+    
+    useEffect(getNewQuestions, [])
+    
+    useEffect(() => {
+        if(!questions || !order) return 
+        setQuestion(questions[order])
+    }, [questions, order])
 
-    useEffect(getNewQuestions(), [])
 
-    return [{ question, order, score, finish, length }, nextQuestion, checkOption, resetGame]
+    return [{ question, order, score, finish, questions }, nextQuestion, checkOption, resetGame]
 }

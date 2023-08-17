@@ -1,7 +1,7 @@
 import QuestionOption from './QuestionOption'
 import '../styles/Question.css'
 
-const Question = ({ initialQuestion, changeQuestion, checkOption }) => {
+const Question = ({ initialQuestion = {question: '', options: []}, changeQuestion, checkOption }) => {
 
     const { question, options } = initialQuestion
 
@@ -14,11 +14,11 @@ const Question = ({ initialQuestion, changeQuestion, checkOption }) => {
     return (
         <>
             <p className='question-q' dangerouslySetInnerHTML={{__html: question && question}} />
-            <form onSubmit={handleSubmit} className='question-form'>
+            <form onSubmit={ handleSubmit } className='question-form'>
                 <div className='question-o-container'>
                     {
                         options && options.map((option, index) => (
-                            <QuestionOption key={index} option={option} checkOption={checkOption} />
+                            <QuestionOption key={index} initialOption={option} checkOption={checkOption} />
                         ))
                     }
                 </div>
