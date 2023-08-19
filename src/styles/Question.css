@@ -18,6 +18,13 @@
     gap: .5rem;
 }
 
+@media screen and (min-width: 576px){
+    .question-o-container{
+        width: 50%;
+    }
+}
+
+
 .btn-next {
     margin: 1rem auto;
     background: transparent;

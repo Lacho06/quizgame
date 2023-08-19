@@ -1,31 +1,22 @@
+import ModalEndGame from '../components/ModalEndGame';
 import Question from '../components/Question'
 import { useGame } from '../hooks/useGame';
 import '../styles/Game.css'
+import Navbar from '../components/Navbar';
 
 const Game = () => {
-    const [gamePack, nextQuestion, checkOption, resetGame] = useGame()
-    const { question, order, score, finish, questions } = gamePack
-    const colorScore = () => {
-        if(score < 30) return 'score-bad'
-        else if(score >= 30 && score <= 70) return 'score-medium'
-        else return 'score-good'
-    }
+    const [gamePack, colorScore, nextQuestion, checkOption, resetGame] = useGame()
+    const { question, order, score, finish, questions, hasResults } = gamePack
 
     return (
         <main className='container-game'>
             {
                 finish ? (
-                    <section>
-                        Your score is: { score }
-                        <button onClick={ () => resetGame() }>Reset game</button>
-                    </section>
+                    <ModalEndGame score={ score } colorScore={ colorScore } resetGame={ resetGame } />
                 ) : (
                     <>
-                        <nav className='nav-game'>
-                            <p>Question <span>#{ order+1 }</span> at <span>{ questions.length }</span></p>
-                            <p>Score: <b className={ colorScore() }>{ score }</b></p>
-                        </nav>
-                        <Question initialQuestion={ question } changeQuestion={ nextQuestion } checkOption={ checkOption } />
+                        <Navbar score={ score } order={ order } colorScore={ colorScore } length={ questions.length }  />
+                        <Question initialQuestion={ question } hasResults={ hasResults } changeQuestion={ nextQuestion } checkOption={ checkOption } />
                     </>
                 )
             }

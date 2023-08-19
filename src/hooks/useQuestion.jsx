@@ -10,7 +10,7 @@ export function useQuestion(initialQuestion){
     useEffect(() => {
         if(!initialQuestion) return 
         setQuestion(initialQuestion)
-    }, [initialQuestion])
+    }, [])
     
     const isCheckAnyOption = () => {
         if(!question) return

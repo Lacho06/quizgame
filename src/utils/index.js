@@ -1,1 +1,0 @@
-export const SCORE_POINTS = 10

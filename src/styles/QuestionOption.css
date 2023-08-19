@@ -56,3 +56,15 @@
 .option-uncheck svg{
     display: none;
 }
+
+.correct-option{
+    color: white;
+    background: green;
+    box-shadow: 0 0 1rem .25rem green;
+}
+
+.incorrect-option{
+    color: white;
+    background: red;
+    box-shadow: 0 0 1rem .25rem red;
+}

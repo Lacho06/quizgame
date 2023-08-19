@@ -1,5 +1,4 @@
 .container-app{
-    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -76,6 +75,7 @@
 
 h1{
     font-family: 'Barriecito', system-ui;
+    font-size: 3rem;
     text-shadow: 0 0 2rem yellow;
     animation-name: parpadear-slow;
     animation-duration: 6s;

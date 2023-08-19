@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { SCORE_POINTS } from '../utils/index';
+import { SCORE_POINTS } from '../utils/constants.js';
 
 export function useScore(){
     const [finish, setFinish] = useState(false)
@@ -10,9 +10,15 @@ export function useScore(){
         setFinish(false)
     }
 
+    const colorScore = () => {
+        if(score < 30) return 'score-bad'
+        else if(score >= 30 && score <= 70) return 'score-medium'
+        else return 'score-good'
+    }
+
     const incrementScore = () => {
         setScore(score+SCORE_POINTS)
     }
 
-    return [{score, finish}, incrementScore, resetScore, setFinish]
+    return [{score, finish}, colorScore, incrementScore, resetScore, setFinish]
 }

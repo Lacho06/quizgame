@@ -1,8 +1,6 @@
 import '../styles/QuestionOption.css'
 const QuestionOption = ({ initialOption = { option: '', check: false }, checkOption }) => {
-
     const { option, check } = initialOption
-
     const styleCheck = check ? 'option-check' : 'option-uncheck'
 
     return (

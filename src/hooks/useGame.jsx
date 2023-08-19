@@ -1,13 +1,14 @@
 import { useState, useEffect } from 'react';
-import { getQuestions } from '../services/question';
 import { useScore } from './useScore';
 import { useQuestion } from './useQuestion';
+import { getQuestions } from '../services/question';
+import confetti from 'canvas-confetti';
 
 export function useGame(){
     const [questions, setQuestions] = useState([])
     const [order, setOrder] = useState(0)
-    const [scorePack, incrementScore, resetScore, setFinish] = useScore()
-    const [question, isCorrectOption, isCheckAnyOption, setQuestion, checkOption] = useQuestion(questions[order])
+    const [scorePack, colorScore, incrementScore, resetScore, setFinish] = useScore()
+    const [question, isCorrectOption, isCheckAnyOption, setQuestion, checkOption] = useQuestion({})
     const { score, finish } = scorePack
 
     const nextQuestion = () => {
@@ -17,30 +18,35 @@ export function useGame(){
         }
         if(order === questions.length-1){
             setFinish(true)
+            confetti()
         }else{
             setOrder(order+1)
             setQuestion(questions[order])
         }
     }
 
-    const getNewQuestions = () => {
-        setQuestions(getQuestions())
-        setQuestion(questions[order])
+    const getNewQuestions = async() => {
+        const questionsAPI = await getQuestions()
+        setQuestions(questionsAPI)
+        return questionsAPI
     }
     
     const resetGame = () => {
-        getNewQuestions()
+        const newQuestions = getNewQuestions()
+        setQuestion(newQuestions[0])
         setOrder(0)
         resetScore()
     }
     
-    useEffect(getNewQuestions, [])
+    useEffect(() => {
+        const newQuestions = getNewQuestions()
+        setQuestion(newQuestions[order])
+    }, [])
     
     useEffect(() => {
-        if(!questions || !order) return 
         setQuestion(questions[order])
     }, [questions, order])
 
 
-    return [{ question, order, score, finish, questions }, nextQuestion, checkOption, resetGame]
+    return [{ question, order, score, finish, questions }, colorScore, nextQuestion, checkOption, resetGame]
 }

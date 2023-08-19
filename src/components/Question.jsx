@@ -1,14 +1,13 @@
 import QuestionOption from './QuestionOption'
 import '../styles/Question.css'
 
-const Question = ({ initialQuestion = {question: '', options: []}, changeQuestion, checkOption }) => {
+const Question = ({ initialQuestion = {question: '', correct_option: '', options: []}, changeQuestion, checkOption }) => {
 
     const { question, options } = initialQuestion
 
-
     const handleSubmit = (e) => {
         e.preventDefault();
-        changeQuestion(e.target.option.value)
+        changeQuestion()
     }
 
     return (
