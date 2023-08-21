@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { getFakeQuestions, getQuestions } from "../services/question"
+import { getQuestions } from "../services/question"
 import { useLoading } from './useLoading';
 import useError from './useError';
 
@@ -17,9 +17,9 @@ export function useGroupQuestion(){
         setOrder(order+1)
     }
 
-    const setNewQuestions = () => {
+    const setNewQuestions = async() => {
         try{
-            const newQuestions = getFakeQuestions()
+            const newQuestions = await getQuestions()
             setQuestions(newQuestions)
             setErrorMessage(null)
         }catch(e){

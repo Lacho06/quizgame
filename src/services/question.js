@@ -1,4 +1,4 @@
-import { RANDOM_10_QUESTIONS_URL } from "../utils/constants"
+import { QUESTIONS_URL } from "../utils/constants"
 import fakeResults from '../mockups/results.json'
 
 const questionsMapped = (questions = []) => {
@@ -26,11 +26,26 @@ export const getFakeQuestions = () => {
 }
 
 export const getQuestions = async() => {
+    const defaultSettings = {
+        difficulty: 'random',
+        numQuestions: 10,
+    }
+    const newSettings = readLocalSettings() || defaultSettings
+    const { difficulty, numQuestions } = JSON.parse(newSettings)
+
     // API call
-    const response = await fetch(RANDOM_10_QUESTIONS_URL)
+    const response = await fetch(QUESTIONS_URL(difficulty, numQuestions))
     const data = await response.json()
     // data mapped
     const results = questionsMapped(data.results)
 
     return results
+}
+
+export const readLocalSettings = () => {
+    return window.localStorage.getItem('settings')
+}
+
+export const saveLocalSettings = (settings) => {
+    window.localStorage.setItem('settings', JSON.stringify(settings))
 }

@@ -6,7 +6,7 @@
     margin: 5rem 0;
 }
 
-.container-app div{
+.container-app header{
     margin: 2rem;
 }
 
@@ -92,6 +92,14 @@ h1 span{
     color: black;
 }
 
-.btn-play{
+.buttons-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 2rem;
+}
+
+.button-link{
     text-decoration: none;
 }

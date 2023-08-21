@@ -35,6 +35,17 @@ body{
     box-shadow: 0 0 .5rem .08rem white;
 }
 
+.button-done {
+    margin: 1rem auto;
+    background: transparent;
+    color: white;
+}
+
+.button-done:hover {
+    background: white;
+    color: green;
+}
+
 .button-green{
     color: green;
 }

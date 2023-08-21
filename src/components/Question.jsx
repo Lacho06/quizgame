@@ -32,7 +32,7 @@ const Question = ({ initialQuestion = {question: '', correct_option: '', options
                         ))
                     }
                 </div>
-                <button className='button btn-next'>Next</button>
+                <button className='button button-done'>Next</button>
             </form>
         </>
     )

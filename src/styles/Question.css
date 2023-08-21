@@ -23,15 +23,3 @@
         width: 50%;
     }
 }
-
-
-.btn-next {
-    margin: 1rem auto;
-    background: transparent;
-    color: white;
-}
-
-.btn-next:hover {
-    background: white;
-    color: green;
-}
