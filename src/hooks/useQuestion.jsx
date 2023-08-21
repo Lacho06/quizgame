@@ -1,16 +1,12 @@
 import { useEffect, useState } from "react"
 
 export function useQuestion(initialQuestion){
-    const [question, setQuestion] = useState({
-        question: '',
-        correct_option: '',
-        options: [],
-    })
+    const [question, setQuestion] = useState(initialQuestion)
     
     useEffect(() => {
         if(!initialQuestion) return 
         setQuestion(initialQuestion)
-    }, [])
+    }, [initialQuestion])
     
     const isCheckAnyOption = () => {
         if(!question) return

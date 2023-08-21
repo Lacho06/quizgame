@@ -1,10 +1,24 @@
+import { useCallback } from 'react'
 import '../styles/QuestionOption.css'
-const QuestionOption = ({ initialOption = { option: '', check: false }, checkOption }) => {
+const QuestionOption = ({ initialOption = { option: '', check: false }, showResults, isCorrect, checkOption }) => {
     const { option, check } = initialOption
     const styleCheck = check ? 'option-check' : 'option-uncheck'
 
+    const checkOptionResults = useCallback(() => {
+        if(!showResults) return ''
+        if(isCorrect){
+            return 'correct-option'
+        }
+        if(!isCorrect && check){
+            return 'incorrect-option'
+        }
+
+        return ''
+    }, [showResults, isCorrect, check])
+
+
     return (
-        <div className={`option-container ${styleCheck}`} onClick={ () => checkOption(option) }>
+        <div className={`option-container ${styleCheck} ${checkOptionResults()}`} onClick={ () => checkOption(option) }>
             <input type="radio" defaultChecked={ check } name="option" value={ option } />
             <span dangerouslySetInnerHTML={{__html: option && option}} />
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">

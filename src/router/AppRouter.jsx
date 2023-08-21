@@ -1,13 +1,15 @@
 import React from 'react'
 import { Routes, Route } from 'react-router-dom'
 import App from '../pages/App'
-import Game from '../pages/Game'
+import GamePage from '../pages/GamePage'
+import SettingsPage from '../pages/SettingsPage'
 
 const AppRouter = () => {
     return (
         <Routes>
             <Route exact path='/' element={<App />} />
-            <Route exact path='/game' element={<Game />} />
+            <Route exact path='/game' element={<GamePage />} />
+            <Route exact path='/settings' element={<SettingsPage />} />
         </Routes>
     )
 }
