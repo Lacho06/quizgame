@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/static/css/main.dff04884.css",
+    "main.js": "/static/js/main.44697fe7.js",
+    "static/media/Barriecito-Regular.ttf": "/static/media/Barriecito-Regular.34e2c53bb0934420ce40.ttf",
+    "index.html": "/index.html",
+    "main.dff04884.css.map": "/static/css/main.dff04884.css.map",
+    "main.44697fe7.js.map": "/static/js/main.44697fe7.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.dff04884.css",
+    "static/js/main.44697fe7.js"
+  ]
+}
